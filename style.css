@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;600;700&display=swap");
+
+/* ---------- Tokens ---------- */
+:root {
+    --violet-950: #1e0a3c;
+    --violet-800: #4c1d95;
+    --violet-600: #7c3aed;
+    --violet-500: #8b5cf6;
+    --violet-300: #c4b5fd;
+    --violet-100: #ede9fe;
+    --violet-50: #f8f5ff;
+    --ink: #2b1a4a;
+    --ink-soft: #5b4a7d;
+    --white: #ffffff;
+
+    --font-script: "Caveat", "Segoe Script", cursive;
+    --font-body: "Nunito", "Segoe UI", system-ui, sans-serif;
+
+    --radius: 18px;
+    --shadow: 0 10px 30px rgba(124, 58, 237, 0.18);
+    --nav-h: 68px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-h);
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--ink);
+    background: var(--violet-50);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:focus-visible {
+    outline: 3px solid var(--violet-500);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* ---------- Navbar ---------- */
+header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--violet-100);
+}
+
+.navbar {
+    max-width: 1100px;
+    height: var(--nav-h);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: var(--font-script);
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--violet-800);
+}
+
+.logo span {
+    color: var(--violet-500);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.4rem;
+}
+
+.nav-links a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    padding: 0.3rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--violet-600);
+    border-bottom-color: var(--violet-500);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 1.7rem;
+    line-height: 1;
+    color: var(--violet-800);
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ---------- Hero ---------- */
+.home {
+    min-height: 100vh;
+    padding: calc(var(--nav-h) + 2rem) 1.25rem 3rem;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: var(--white);
+    background:
+        radial-gradient(circle at 20% 20%, rgba(196, 181, 253, 0.45), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(139, 92, 246, 0.55), transparent 50%),
+        linear-gradient(160deg, var(--violet-800), var(--violet-950));
+}
+
+.home-text {
+    max-width: 720px;
+}
+
+.welcome {
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    color: var(--violet-300);
+    margin-bottom: 1rem;
+}
+
+.home h1 {
+    font-family: var(--font-script);
+    font-size: clamp(2.8rem, 8vw, 5.2rem);
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 0.8rem;
+}
+
+.home h1 span {
+    color: var(--violet-300);
+}
+
+.home h2 {
+    font-family: var(--font-script);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 500;
+    color: var(--violet-100);
+    margin-bottom: 1rem;
+}
+
+.intro {
+    color: var(--violet-100);
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.85rem 2.2rem;
+    border-radius: 999px;
+    font-weight: 700;
+    color: var(--violet-800);
+    background: var(--white);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s, background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: var(--violet-100);
+}
+
+/* ---------- Sections ---------- */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.section {
+    padding: 5rem 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.section > h2 {
+    flex: 0 0 100%;
+    text-align: center;
+    font-family: var(--font-script);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--violet-800);
+    line-height: 1.1;
+}
+
+.section > h2 span {
+    color: var(--violet-500);
+}
+
+/* About him: the love note */
+.section > p {
+    flex: 0 0 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem 2.2rem;
+    background: var(--white);
+    border-left: 6px solid var(--violet-500);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    color: var(--ink);
+}
+
+/* ---------- Cards ----------
+   Note: class names with spaces in the HTML split into several classes,
+   so the cards are targeted by their last word (e.g. "him-card"). */
+.him-card,
+.iloveyou-card,
+.attitude-card,
+.appearance-card {
+    background: var(--white);
+    border: 1px solid var(--violet-100);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.4rem;
+    text-align: center;
+    flex: 1 1 260px;
+    max-width: 330px;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.him-card:hover,
+.iloveyou-card:hover,
+.attitude-card:hover,
+.appearance-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(124, 58, 237, 0.28);
+}
+
+.him-card img,
+.iloveyou-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    background: var(--violet-100);
+}
+
+.attitude-card img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    border: 4px solid var(--violet-100);
+    background: var(--violet-100);
+}
+
+.section h3 {
+    font-family: var(--font-script);
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--violet-600);
+    line-height: 1.2;
+}
+
+.section h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    margin-bottom: 0.3rem;
+}
+
+.him-card p,
+.iloveyou-card p,
+.appearance-card p {
+    color: var(--ink-soft);
+}
+
+/* Appearance cards have no image, so give them a soft violet tint */
+.appearance-card {
+    background: linear-gradient(160deg, var(--violet-100), var(--white));
+    padding: 2rem 1.4rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    margin-top: 5rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--violet-100);
+    background: var(--violet-950);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 860px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--violet-100);
+        box-shadow: var(--shadow);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    /* works with either class name your script.js toggles */
+    .nav-links.active,
+    .nav-links.show,
+    .nav-links.open {
+        max-height: 420px;
+    }
+
+    .nav-links li {
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.9rem 1rem;
+        border-bottom: none;
+    }
+
+    .nav-links a:hover {
+        background: var(--violet-50);
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding-top: 4rem;
+    }
+
+    .section > p {
+        padding: 1.4rem 1.2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
